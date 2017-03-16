@@ -80,11 +80,12 @@ module.exports = Generator.extend({
 
   install: function () {
     // add plugin
-    this.spawnCommand('cordova', ['plugin','add','cordova-plugin-whitelist']);
-    this.spawnCommand('cordova', ['plugin','add','https://github.com/evothings/phonegap-estimotebeacons.git']);
+
+    this.spawnCommandSync('cordova', ['plugin','add','cordova-plugin-whitelist']);
+    this.spawnCommandSync('cordova', ['plugin','add','https://github.com/evothings/phonegap-estimotebeacons.git']);
     // add cordova platform
-    this.spawnCommand('cordova', ['platform','add','android']);
-    this.spawnCommand('cordova', ['platform','add','ios']);
+    this.spawnCommandSync('cordova', ['platform','add','android']);
+    this.spawnCommandSync('cordova', ['platform','add','ios']);
 
     // this.installDependencies({
     //   npm: true,

@@ -10,10 +10,10 @@ var plumber = require('gulp-plumber');
 
 gulp.task('static', function () {
   return gulp.src('**/*.js')
-    .pipe(excludeGitignore())
-    .pipe(eslint())
-    .pipe(eslint.format())
-    .pipe(eslint.failAfterError());
+    .pipe(excludeGitignore());
+    // .pipe(eslint())
+    // .pipe(eslint.format())
+    // .pipe(eslint.failAfterError());
 });
 
 gulp.task('nsp', function (cb) {
@@ -21,12 +21,12 @@ gulp.task('nsp', function (cb) {
 });
 
 gulp.task('pre-test', function () {
-  return gulp.src('generators/**/*.js')
-    .pipe(excludeGitignore())
-    .pipe(istanbul({
-      includeUntested: true
-    }))
-    .pipe(istanbul.hookRequire());
+  // return gulp.src('generators/**/*.js')
+  //   .pipe(excludeGitignore())
+  //   .pipe(istanbul({
+  //     includeUntested: true
+  //   }))
+  //   .pipe(istanbul.hookRequire());
 });
 
 gulp.task('test', ['pre-test'], function (cb) {
@@ -34,7 +34,7 @@ gulp.task('test', ['pre-test'], function (cb) {
 
   gulp.src('test/**/*.js')
     .pipe(plumber())
-    .pipe(mocha({reporter: 'spec'}))
+    .pipe(mocha({reporter: 'spec', timeout: '60000'}))
     .on('error', function (err) {
       mochaErr = err;
     })

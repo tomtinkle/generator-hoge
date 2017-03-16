@@ -16,7 +16,7 @@
     "test": "gulp",
     "prepublish": "gulp prepublish"
   },
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "yeoman-generator": "^1.0.0",
     "chalk": "^1.1.3",
