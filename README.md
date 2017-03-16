@@ -1,0 +1,2 @@
+# generator-hoge
+yeoman test
