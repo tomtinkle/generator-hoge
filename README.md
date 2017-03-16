@@ -25,7 +25,7 @@ yo hoge
 
 ## License
 
-ISC © [tomtinkle](https://github.com/tomtinkle)
+MIT © [tomtinkle](https://github.com/tomtinkle)
 
 
 [npm-image]: https://badge.fury.io/js/generator-hoge.svg
